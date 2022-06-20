@@ -50,9 +50,14 @@ if(!isset($_SESSION['admin_loggedin'])){
               </div>
             </a>
             <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+              
               <a class="dropdown-item" href="#">
-                <i class="mdi mdi-cached mr-2 text-success"></i>
-                Activity Log
+                <i class="mdi mdi-settings mr-2 text-success"></i>
+                Settings
+              </a>
+              <a class="dropdown-item" href="change-password.php">
+                <i class="mdi mdi-lock mr-2 text-success"></i>
+                Change Password
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="logout.php">
@@ -161,66 +166,106 @@ if(!isset($_SESSION['admin_loggedin'])){
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <span class="menu-title">Dashboard</span>
-              <i class="mdi mdi-home menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-              <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <span class="menu-title">Icons</span>
-              <i class="mdi mdi-contacts menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <span class="menu-title">Forms</span>
-              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <span class="menu-title">Charts</span>
-              <i class="mdi mdi-chart-bar menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <span class="menu-title">Tables</span>
-              <i class="mdi mdi-table-large menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-              <span class="menu-title">Sample Pages</span>
-              <i class="menu-arrow"></i>
-              <i class="mdi mdi-medical-bag menu-icon"></i>
-            </a>
-            <div class="collapse" id="general-pages">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-              </div>
-          </li>
-          
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-6" aria-expanded="false" aria-controls="ui-6">
+                <span class="menu-title">Class Routine</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-6">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">All Routine</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Add New</a></li> 
+                </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-5" aria-expanded="false" aria-controls="ui-5">
+                <span class="menu-title">Classes</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-5">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">All Class</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Add New</a></li> 
+                </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-4" aria-expanded="false" aria-controls="ui-4">
+                <span class="menu-title">Subjects</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-4">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">All Subjects</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Add New</a></li> 
+                </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Students</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">All Students</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Search</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Results</a></li>
+                </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-2" aria-expanded="false" aria-controls="ui-2">
+                <span class="menu-title">Teachers</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-2">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">All Teacher</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Search</a></li> 
+                </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-3" aria-expanded="false" aria-controls="ui-3">
+                <span class="menu-title">Payments</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-3">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="">Student Payments</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Teacher Payments</a></li> 
+                </ul>
+                </div>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="pages/icons/mdi.html">
+                <span class="menu-title">Icons</span>
+                <i class="mdi mdi-contacts menu-icon"></i>
+                </a>
+            </li> -->
+ 
         </ul>
       </nav>
       <!-- partial -->
