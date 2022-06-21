@@ -16,21 +16,21 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.addons.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/misc.js"></script>
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/misc.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
+  <script src="../js/dashboard.js"></script>
   <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script src="vendors/js/dataTables.buttons.min.js"></script>
-  <script src="vendors/js/pdfmake.min.js"></script> 
-  <script src="vendors/js/vfs_fonts.js"></script> 
+  <script src="../vendors/js/dataTables.buttons.min.js"></script>
+  <script src="../vendors/js/pdfmake.min.js"></script> 
+  <script src="../vendors/js/vfs_fonts.js"></script> 
   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
   
   <script>
