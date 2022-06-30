@@ -32,6 +32,14 @@ function getCount($tbl,$col,$val){
     return $count;
 }
 
+function getSubjectName($id){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT name,code FROM subjects WHERE id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0]['name']."-".$result[0]['code'];
+}
+
 //  GET Student Data
 // function Student($col,$id){
 //     global $pdo;

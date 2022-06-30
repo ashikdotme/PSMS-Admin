@@ -63,7 +63,7 @@ if(isset($_POST['create_btn'])){
 
             <div class="form-group">
                 <label>Subject Type:</label> <br>
-                <label><input type="radio" value="Theroy" name="sub_type"> Theroy</label> &nbsp; &nbsp;
+                <label><input type="radio" value="Theory" name="sub_type"> Theory</label> &nbsp; &nbsp;
                 <label><input type="radio" value="Practical" name="sub_type"> Practical</label>
             </div> 
             
