@@ -9,9 +9,9 @@ if(isset($_POST['create_btn'])){
     $t_password = $_POST['t_password'];
      
     // Teacher Mobile Count 
-    $mobileCount = teacherCount('mobile',$t_mobile);
+    $mobileCount = getCount('teachers','mobile',$t_mobile);
     // Teacher Email Count 
-    $emailCount = teacherCount('email',$t_email);
+    $emailCount = getCount('teachers','email',$t_email);
 
 
     if(empty($t_name)){
