@@ -183,8 +183,8 @@ if(!isset($_SESSION['admin_loggedin'])){
                 </a>
                 <div class="collapse" id="ui-6">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="">All Routine</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Add New</a></li> 
+                    <li class="nav-item"> <a class="nav-link" href="routine-all.php">All Routine</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="routine-add-new.php">Add New</a></li> 
                 </ul>
                 </div>
             </li>

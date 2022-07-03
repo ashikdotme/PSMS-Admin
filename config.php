@@ -40,6 +40,26 @@ function getSubjectName($id){
     return $result[0]['name']."-".$result[0]['code'];
 }
 
+function getSubjectTeacher($id){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT teacher_id FROM assign_teachers WHERE subject_id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0]['teacher_id'];
+}
+
+
+function getClassName($id,$col){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT $col FROM class WHERE id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0][$col];
+}
+
+
+
+
 //  GET Student Data
 // function Student($col,$id){
 //     global $pdo;
