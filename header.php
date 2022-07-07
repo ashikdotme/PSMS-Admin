@@ -234,6 +234,13 @@ if(!isset($_SESSION['admin_loggedin'])){
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="attendance.php">
+                <span class="menu-title">Attendance</span>
+                <i class="mdi mdi-home menu-icon"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#ui-2" aria-expanded="false" aria-controls="ui-2">
                 <span class="menu-title">Teachers</span>
                 <i class="menu-arrow"></i>
