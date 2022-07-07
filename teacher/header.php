@@ -175,7 +175,7 @@ if(!isset($_SESSION['teacher_loggedin'])){
                 <div class="collapse" id="ui-5">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="attendance-new.php">New Attendance</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="attendance-all.php">Attendance History</a></li> 
+                    <li class="nav-item"> <a class="nav-link" href="attendance-history.php">Attendance History</a></li> 
                 </ul>
                 </div>
             </li>
