@@ -11,10 +11,22 @@ if(isset($_POST['submit_btn'])){
     }
     $select_exam = $_POST['select_exam'];
     
-    // Count Subject Result
-    $stm=$pdo->prepare("SELECT * FROM exam_marks WHERE class_id=? AND subject_id=? AND teacher_id=? AND exam_id=?");
-    $stm->execute(array($class_id,$subject_id,$teacher_id,$select_exam));
-    $attCount = $stm->rowCount();
+    if($select_exam == 1){
+        $stm=$pdo->prepare("SELECT * FROM exam_marks_1 WHERE class_id=? AND subject_id=? AND teacher_id=? AND exam_id=?");
+        $stm->execute(array($class_id,$subject_id,$teacher_id,$select_exam));
+        $exCount = $stm->rowCount();
+    }
+    else if($select_exam == 2){
+        $stm=$pdo->prepare("SELECT * FROM exam_marks_2 WHERE class_id=? AND subject_id=? AND teacher_id=? AND exam_id=?");
+        $stm->execute(array($class_id,$subject_id,$teacher_id,$select_exam));
+        $exCount = $stm->rowCount();
+    }
+    else if($select_exam == 3){
+        $stm=$pdo->prepare("SELECT * FROM exam_marks_3 WHERE class_id=? AND subject_id=? AND teacher_id=? AND exam_id=?");
+        $stm->execute(array($class_id,$subject_id,$teacher_id,$select_exam));
+        $exCount = $stm->rowCount();
+    }
+
     // by Default
     $studentCount = NULL;
   
@@ -28,14 +40,29 @@ if(isset($_POST['submit_btn'])){
         $error = "Select Exam is Required!";
     }
     
-    else if($attCount != 1){
+    else if($exCount == 0){
         $error = "Result not Found!";
     }
     else{
-        $stm=$pdo->prepare("SELECT * FROM exam_marks WHERE class_id=? AND subject_id=? AND exam_id=?");
-        $stm->execute(array($class_id,$subject_id,$select_exam));
-        $studentCount = $stm->rowCount();
-        $studentList = $stm->fetchAll(PDO::FETCH_ASSOC);  
+        if($select_exam == 1){
+            $stm=$pdo->prepare("SELECT * FROM exam_marks_1 WHERE class_id=? AND subject_id=? AND exam_id=?");
+            $stm->execute(array($class_id,$subject_id,$select_exam));
+            $studentCount = $stm->rowCount();
+            $studentList = $stm->fetchAll(PDO::FETCH_ASSOC);  
+        }
+        else if($select_exam == 2){
+            $stm=$pdo->prepare("SELECT * FROM exam_marks_2 WHERE class_id=? AND subject_id=? AND exam_id=?");
+            $stm->execute(array($class_id,$subject_id,$select_exam));
+            $studentCount = $stm->rowCount();
+            $studentList = $stm->fetchAll(PDO::FETCH_ASSOC);  
+        }
+        else if($select_exam == 3){
+            $stm=$pdo->prepare("SELECT * FROM exam_marks_3 WHERE class_id=? AND subject_id=? AND exam_id=?");
+            $stm->execute(array($class_id,$subject_id,$select_exam));
+            $studentCount = $stm->rowCount();
+            $studentList = $stm->fetchAll(PDO::FETCH_ASSOC);  
+        }
+        
     } 
 }
   
@@ -152,16 +179,14 @@ if(isset($_POST['submit_btn'])){
                 </thead>
                 <tbody>
                     <?php 
-                        $i=1;  
-                        $stList = $studentList[0]['student_data'];
-                        $stList = json_decode($stList,true); 
-                        foreach($stList as $newList) :
+                        $i=1;   
+                        foreach($studentList as $newList) :
  
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><?php echo $newList['name'];?> </td> 
-                        <td><?php echo $newList['marks'];?> </td>  
+                        <td><?php echo Student($newList['st_id'],'name') ;?> </td> 
+                        <td><?php echo $newList['st_marks'];?> </td>  
                     </tr>
                     <?php $i++; endforeach;?>
                 </tbody>
