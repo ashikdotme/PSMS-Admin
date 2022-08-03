@@ -19,10 +19,10 @@ if(isset($_POST['submit_btn'])){
         $allSubjectArray= json_decode($allSubjectList);
  
         // Get Submitted Marks list
-        $stm=$pdo->prepare("SELECT exam_marks.id,exam_marks.class_id,exam_marks.teacher_id,exam_marks.subject_id,exam_marks.exam_id,teachers.name as teacher_name,subjects.name as subject_name,subjects.code as subject_code FROM exam_marks  
-        INNER JOIN teachers ON exam_marks.teacher_id = teachers.id 
-        INNER JOIN subjects ON exam_marks.subject_id = subjects.id 
-        WHERE exam_marks.class_id = ?");
+        $stm=$pdo->prepare("SELECT exam_marks_3.id,exam_marks_3.class_id,exam_marks_3.teacher_id,exam_marks_3.subject_id,exam_marks_3.exam_id,teachers.name as teacher_name,subjects.name as subject_name,subjects.code as subject_code FROM exam_marks_3  
+        INNER JOIN teachers ON exam_marks_3.teacher_id = teachers.id 
+        INNER JOIN subjects ON exam_marks_3.subject_id = subjects.id 
+        WHERE exam_marks_3.class_id = ?");
         $stm->execute(array($class_id));
         $marksCount = $stm->rowCount();
         $marksList = $stm->fetchAll(PDO::FETCH_ASSOC);  
