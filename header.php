@@ -278,7 +278,8 @@ if(!isset($_SESSION['admin_loggedin'])){
                 <div class="collapse" id="ui-3">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="">Student Payments</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Teacher Payments</a></li> 
+                    <li class="nav-item"> <a class="nav-link" href="payment-teacher.php">Teacher Payments</a></li> 
+                    <li class="nav-item"> <a class="nav-link" href="teacher-payment-history.php">Teacher Payments History</a></li> 
                 </ul>
                 </div>
             </li>

@@ -101,3 +101,5 @@ function Student($id,$col){
     return $result[0][$col];
 }
 
+// Require Function File
+require_once('functions.php');
